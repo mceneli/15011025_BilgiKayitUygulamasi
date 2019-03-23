@@ -3,7 +3,9 @@ package com.example.myfirstapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.graphics.Bitmap;
 
 public class display extends AppCompatActivity {
 
@@ -31,7 +33,10 @@ public class display extends AppCompatActivity {
         textView4.setText(text4);
         textView5.setText(text5);
 
-
+        ImageView image=(ImageView)findViewById(R.id.imageView2);
+        Bundle extras = getIntent().getExtras();
+        Bitmap bmp = (Bitmap) extras.getParcelable("imagebitmap");
+        image.setImageBitmap(bmp );
 
     }
 }
