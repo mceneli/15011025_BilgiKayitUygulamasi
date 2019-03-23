@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
@@ -24,6 +25,7 @@ import com.karumi.dexter.listener.DexterError;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.PermissionRequestErrorListener;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
+
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.List;
@@ -69,6 +71,19 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                 showPictureDialog();
             }
         });
+        if(savedInstanceState!=null){
+            EditText editText=(EditText)findViewById(R.id.isim);
+            EditText editText2=(EditText)findViewById(R.id.soyisim);
+            EditText editText3=(EditText)findViewById(R.id.dogumyeri);
+            TextView editText4=(TextView)findViewById(R.id.tarihtext);
+            EditText editText5=(EditText)findViewById(R.id.kimlik);
+
+            editText.setText(savedInstanceState.getString("isim"));
+            editText2.setText(savedInstanceState.getString("soyisim"));
+            editText3.setText(savedInstanceState.getString("dogumyeri"));
+            editText4.setText(savedInstanceState.getString("dogumtarihi"));
+            editText5.setText(savedInstanceState.getString("kimlik"));
+        }
 
     }
 
@@ -212,4 +227,18 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                 .onSameThread()
                 .check();
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outstate){
+        super.onSaveInstanceState(outstate);
+
+        outstate.putString("isim",findViewById(R.id.isim).toString());
+        outstate.putString("soyisim",findViewById(R.id.soyisim).toString());
+        outstate.putString("dogumyeri",findViewById(R.id.dogumyeri).toString());
+        TextView text=(TextView)findViewById(R.id.tarihtext);
+        outstate.putString("dogumtarihi",text.getText().toString());
+        outstate.putString("kimliknumarasi",findViewById(R.id.kimlik).toString());
+
+    }
+
 }
