@@ -36,12 +36,13 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     public static final String EXTRA_TEXT3 ="com.example.myfirstapp.EXTRA_TEXT3";
     public static final String EXTRA_TEXT4 ="com.example.myfirstapp.EXTRA_TEXT4";
     public static final String EXTRA_TEXT5 ="com.example.myfirstapp.EXTRA_NUMBER";
+    public static final String EXTRA_TEXT6 ="com.example.myfirstapp.EXTRA_NUMBER2";
+
 
     private Button btn2;
     private Button btn3;
     private TextView dateText;
     private ImageView imageview;
-    private static final String IMAGE_DIRECTORY = "/myfirstapp";
     private int GALLERY = 1, CAMERA = 2;
 
     @Override
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         requestMultiplePermissions();
+
         btn3=(Button)findViewById(R.id.button3);
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,12 +79,14 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
             EditText editText3=(EditText)findViewById(R.id.dogumyeri);
             TextView editText4=(TextView)findViewById(R.id.tarihtext);
             EditText editText5=(EditText)findViewById(R.id.kimlik);
+            EditText editText6=(EditText)findViewById(R.id.telno);
 
             editText.setText(savedInstanceState.getString("isim"));
             editText2.setText(savedInstanceState.getString("soyisim"));
             editText3.setText(savedInstanceState.getString("dogumyeri"));
             editText4.setText(savedInstanceState.getString("dogumtarihi"));
             editText5.setText(savedInstanceState.getString("kimlik"));
+            editText6.setText(savedInstanceState.getString("telno"));
         }
 
     }
@@ -170,12 +174,16 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         String text4=textView.getText().toString();
         EditText editText5=(EditText) findViewById(R.id.kimlik);
         String text5=editText5.getText().toString();
+        EditText editText6=(EditText) findViewById(R.id.telno);
+        String text6=editText6.getText().toString();
+
 
         intent.putExtra(EXTRA_TEXT,text);
         intent.putExtra(EXTRA_TEXT2,text2);
         intent.putExtra(EXTRA_TEXT3,text3);
         intent.putExtra(EXTRA_TEXT4,text4);
         intent.putExtra(EXTRA_TEXT5,text5);
+        intent.putExtra(EXTRA_TEXT6,text6);
 
         imageview.buildDrawingCache();
         Bitmap image= imageview.getDrawingCache();
@@ -238,6 +246,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         TextView text=(TextView)findViewById(R.id.tarihtext);
         outstate.putString("dogumtarihi",text.getText().toString());
         outstate.putString("kimliknumarasi",findViewById(R.id.kimlik).toString());
+
 
     }
 
