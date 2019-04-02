@@ -24,7 +24,7 @@ public class CourseList extends AppCompatActivity {
 
         listItems = new ArrayList();
 
-        for(int i=0;i<5;i++){
+        for(int i=0;i<50;i++){
             ListItem listItem = new ListItem(
                     "Ders" + (i+1),
                     "AA"

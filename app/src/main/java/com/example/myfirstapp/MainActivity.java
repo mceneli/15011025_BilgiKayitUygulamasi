@@ -196,7 +196,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-        String date = "gün/ay/yıl: " + dayOfMonth + "/" + (month+1) + "/" + year;
+        String date = "d/m/y: " + dayOfMonth + "/" + (month+1) + "/" + year;
         dateText.setText(date);
     }
 
