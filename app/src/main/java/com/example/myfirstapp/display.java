@@ -71,11 +71,13 @@ public class display extends AppCompatActivity {
         TextView email=findViewById(R.id.emailt);
         String recipient=email.getText().toString();
 
-        Intent mailIntent = new Intent(Intent.ACTION_VIEW);
-        Uri data = Uri.parse("mailto:?subject=&body=&to=" + recipient);
-        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++"+data);
-        mailIntent.setData(data);
-        startActivity(Intent.createChooser(mailIntent, "Send mail..."));
+
+        String[] TO = recipient.split(" ");
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.setType("text/plain");
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+        startActivity(Intent.createChooser(emailIntent, "E posta gönder"));
     }
 
     public void call(View v) {
