@@ -26,6 +26,7 @@ public class display extends AppCompatActivity {
         String text4 = intent.getStringExtra(Main2Activity.EXTRA_TEXT4);
         String text5 = intent.getStringExtra(Main2Activity.EXTRA_TEXT5);
         text6 = intent.getStringExtra(Main2Activity.EXTRA_TEXT6);
+        String text7 = intent.getStringExtra(Main2Activity.EXTRA_TEXT7);
 
         TextView textView1 = (TextView) findViewById(R.id.isimt);
         TextView textView2 = (TextView) findViewById(R.id.soyisimt);
@@ -33,6 +34,7 @@ public class display extends AppCompatActivity {
         TextView textView4 = (TextView) findViewById(R.id.dogumtarihit);
         TextView textView5 = (TextView) findViewById(R.id.kimlikt);
         TextView textView6 = (TextView) findViewById(R.id.telnot);
+        TextView textView7 = (TextView) findViewById(R.id.emailt);
 
 
         textView1.setText(text);
@@ -41,6 +43,7 @@ public class display extends AppCompatActivity {
         textView4.setText(text4);
         textView5.setText(text5);
         textView6.setText(text6);
+        textView7.setText(text7);
 
         ImageView image=(ImageView)findViewById(R.id.imageView2);
         Bundle extras = getIntent().getExtras();
@@ -54,6 +57,25 @@ public class display extends AppCompatActivity {
                 goActivity();
             }
         });
+
+        Button buttonSend=findViewById(R.id.button6);
+        buttonSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendMail();
+            }
+        });
+    }
+
+    private void sendMail(){
+        TextView email=findViewById(R.id.emailt);
+        String recipient=email.getText().toString();
+
+        Intent mailIntent = new Intent(Intent.ACTION_VIEW);
+        Uri data = Uri.parse("mailto:?subject=&body=&to=" + recipient);
+        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++"+data);
+        mailIntent.setData(data);
+        startActivity(Intent.createChooser(mailIntent, "Send mail..."));
     }
 
     public void call(View v) {

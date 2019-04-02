@@ -37,10 +37,12 @@ public class Main2Activity extends AppCompatActivity implements DatePickerDialog
     public static final String EXTRA_TEXT4 ="com.example.myfirstapp.EXTRA_TEXT4";
     public static final String EXTRA_TEXT5 ="com.example.myfirstapp.EXTRA_NUMBER";
     public static final String EXTRA_TEXT6 ="com.example.myfirstapp.EXTRA_NUMBER2";
+    public static final String EXTRA_TEXT7 ="com.example.myfirstapp.EXTRA_TEXT7";
 
 
     private Button btn2;
     private Button btn3;
+    private Button temizle;
     private TextView dateText;
     private ImageView imageview;
     private int GALLERY = 1, CAMERA = 2;
@@ -50,7 +52,13 @@ public class Main2Activity extends AppCompatActivity implements DatePickerDialog
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         requestMultiplePermissions();
-
+        temizle=findViewById(R.id.button8);
+        temizle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clear();
+            }
+        });
         btn3=findViewById(R.id.button3);
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +88,7 @@ public class Main2Activity extends AppCompatActivity implements DatePickerDialog
             TextView editText4=(TextView)findViewById(R.id.tarihtext);
             EditText editText5=(EditText)findViewById(R.id.kimlik);
             EditText editText6=(EditText)findViewById(R.id.telno);
+            EditText editText7=(EditText)findViewById(R.id.email);
 
             editText.setText(savedInstanceState.getString("isim"));
             editText2.setText(savedInstanceState.getString("soyisim"));
@@ -87,8 +96,28 @@ public class Main2Activity extends AppCompatActivity implements DatePickerDialog
             editText4.setText(savedInstanceState.getString("dogumtarihi"));
             editText5.setText(savedInstanceState.getString("kimlik"));
             editText6.setText(savedInstanceState.getString("telno"));
+            editText7.setText(savedInstanceState.getString("email"));
         }
 
+    }
+
+    private void clear(){
+        EditText editText=(EditText)findViewById(R.id.isim);
+        EditText editText2=(EditText)findViewById(R.id.soyisim);
+        EditText editText3=(EditText)findViewById(R.id.dogumyeri);
+        TextView editText4=(TextView)findViewById(R.id.tarihtext);
+        EditText editText5=(EditText)findViewById(R.id.kimlik);
+        EditText editText6=(EditText)findViewById(R.id.telno);
+        EditText editText7=(EditText)findViewById(R.id.email);
+
+        editText.setText("");
+        editText2.setText("");
+        editText3.setText("");
+        editText4.setText("");
+        editText5.setText("");
+        editText6.setText("");
+        editText7.setText("");
+        imageview.setImageResource(android.R.color.transparent);
     }
 
     private void showPictureDialog(){
@@ -176,6 +205,9 @@ public class Main2Activity extends AppCompatActivity implements DatePickerDialog
         String text5=editText5.getText().toString();
         EditText editText6=(EditText) findViewById(R.id.telno);
         String text6=editText6.getText().toString();
+        EditText editText7=(EditText) findViewById(R.id.email);
+        String text7=editText7.getText().toString();
+
 
 
         intent.putExtra(EXTRA_TEXT,text);
@@ -184,6 +216,7 @@ public class Main2Activity extends AppCompatActivity implements DatePickerDialog
         intent.putExtra(EXTRA_TEXT4,text4);
         intent.putExtra(EXTRA_TEXT5,text5);
         intent.putExtra(EXTRA_TEXT6,text6);
+        intent.putExtra(EXTRA_TEXT7,text7);
 
         imageview.buildDrawingCache();
         Bitmap image= imageview.getDrawingCache();
@@ -246,7 +279,7 @@ public class Main2Activity extends AppCompatActivity implements DatePickerDialog
         TextView text=(TextView)findViewById(R.id.tarihtext);
         outstate.putString("dogumtarihi",text.getText().toString());
         outstate.putString("kimliknumarasi",findViewById(R.id.kimlik).toString());
-
+        outstate.putString("email",findViewById(R.id.email).toString());
 
     }
 

@@ -38,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
         s1=e1.getText().toString();
         s2=e2.getText().toString();
 
-        System.out.println(s1 + "   " + s2);
-
         if(s1.equals("admin") && s2.equals("password")){
             startActivity(intent);
         }else{
