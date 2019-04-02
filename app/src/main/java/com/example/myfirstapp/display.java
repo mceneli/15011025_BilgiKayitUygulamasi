@@ -20,12 +20,12 @@ public class display extends AppCompatActivity {
         setContentView(R.layout.activity_display);
 
         Intent intent = getIntent();
-        String text  = intent.getStringExtra(MainActivity.EXTRA_TEXT);
-        String text2 = intent.getStringExtra(MainActivity.EXTRA_TEXT2);
-        String text3 = intent.getStringExtra(MainActivity.EXTRA_TEXT3);
-        String text4 = intent.getStringExtra(MainActivity.EXTRA_TEXT4);
-        String text5 = intent.getStringExtra(MainActivity.EXTRA_TEXT5);
-        text6 = intent.getStringExtra(MainActivity.EXTRA_TEXT6);
+        String text  = intent.getStringExtra(Main2Activity.EXTRA_TEXT);
+        String text2 = intent.getStringExtra(Main2Activity.EXTRA_TEXT2);
+        String text3 = intent.getStringExtra(Main2Activity.EXTRA_TEXT3);
+        String text4 = intent.getStringExtra(Main2Activity.EXTRA_TEXT4);
+        String text5 = intent.getStringExtra(Main2Activity.EXTRA_TEXT5);
+        text6 = intent.getStringExtra(Main2Activity.EXTRA_TEXT6);
 
         TextView textView1 = (TextView) findViewById(R.id.isimt);
         TextView textView2 = (TextView) findViewById(R.id.soyisimt);
