@@ -1,11 +1,12 @@
 package com.example.myfirstapp;
 
 public class ListItem {
-    private String head,desc;
+    private String head,desc,detail;
 
-    public ListItem(String head, String desc) {
+    public ListItem(String head, String desc, String detail) {
         this.head = head;
         this.desc = desc;
+        this.detail=detail;
     }
 
     public String getHead() {
@@ -22,5 +23,13 @@ public class ListItem {
 
     public void setDesc(String desc) {
         this.desc = desc;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
     }
 }

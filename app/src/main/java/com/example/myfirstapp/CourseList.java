@@ -24,13 +24,48 @@ public class CourseList extends AppCompatActivity {
 
         listItems = new ArrayList();
 
-        for(int i=0;i<50;i++){
-            ListItem listItem = new ListItem(
-                    "Ders" + (i+1),
-                    "AA"
-            );
+        ListItem listItem = new ListItem(
+                "BLM1011",
+                "AA",
+                "Bilgisayar Bilimlerine Giriş 1"
+        );
             listItems.add(listItem);
-        }
+
+        ListItem listItem2 = new ListItem(
+                "BLM1991",
+                "AA",
+                "İş Sağlığı ve Güvenliği"
+        );
+        listItems.add(listItem2);
+
+        ListItem listItem3 = new ListItem(
+                "MDB1031",
+                "AA",
+                "İleri İngilizce 1"
+        );
+        listItems.add(listItem3);
+
+        ListItem listItem4 = new ListItem(
+                "MAT1071",
+                "AA",
+                "Matematik 1"
+        );
+        listItems.add(listItem4);
+
+        ListItem listItem5 = new ListItem(
+                "FIZ1001",
+                "AA",
+                "Fizik 1"
+        );
+        listItems.add(listItem5);
+
+        ListItem listItem6 = new ListItem(
+                "MAT1320",
+                "AA",
+                "Lineer Cebir"
+        );
+        listItems.add(listItem6);
+
         adapter = new MyAdapter(listItems,this);
         recyclerView.setAdapter(adapter);
     }
