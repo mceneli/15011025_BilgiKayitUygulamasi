@@ -41,6 +41,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                 Intent intent = new Intent(context, DetailActivity.class);
                 intent.putExtra("head",listItem.getHead());
                 intent.putExtra("detail",listItem.getDetail());
+                intent.putExtra("ogrSayi",listItem.getOgrsayi());
+                intent.putExtra("ortalama",listItem.getOrtalama());
 
                 context.startActivity(intent);
             }

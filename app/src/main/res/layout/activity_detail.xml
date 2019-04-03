@@ -20,7 +20,27 @@
         android:id="@+id/courseDetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="detail"
+        android:text="dersin adı"
+        android:textSize="16dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="16dp"
+        />
+    <TextView
+        android:id="@+id/courseOgrSayi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="öğrenci sayisi"
+        android:textSize="16dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="16dp"
+        />
+    <TextView
+        android:id="@+id/courseOrtalama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ortalama"
         android:textSize="16dp"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"

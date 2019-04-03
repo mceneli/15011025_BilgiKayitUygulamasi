@@ -27,42 +27,54 @@ public class CourseList extends AppCompatActivity {
         ListItem listItem = new ListItem(
                 "BLM1011",
                 "AA",
-                "Bilgisayar Bilimlerine Giriş 1"
+                "Bilgisayar Bilimlerine Giriş 1",
+                "99",
+                "39"
         );
             listItems.add(listItem);
 
         ListItem listItem2 = new ListItem(
                 "BLM1991",
                 "AA",
-                "İş Sağlığı ve Güvenliği"
+                "İş Sağlığı ve Güvenliği",
+                "45",
+                "75"
         );
         listItems.add(listItem2);
 
         ListItem listItem3 = new ListItem(
                 "MDB1031",
                 "AA",
-                "İleri İngilizce 1"
+                "İleri İngilizce 1",
+                "80",
+                "74"
         );
         listItems.add(listItem3);
 
         ListItem listItem4 = new ListItem(
                 "MAT1071",
                 "AA",
-                "Matematik 1"
+                "Matematik 1",
+                "180",
+                "33"
         );
         listItems.add(listItem4);
 
         ListItem listItem5 = new ListItem(
                 "FIZ1001",
                 "AA",
-                "Fizik 1"
+                "Fizik 1",
+                "150",
+                "36"
         );
         listItems.add(listItem5);
 
         ListItem listItem6 = new ListItem(
                 "MAT1320",
                 "AA",
-                "Lineer Cebir"
+                "Lineer Cebir",
+                "100",
+                "65"
         );
         listItems.add(listItem6);
 
